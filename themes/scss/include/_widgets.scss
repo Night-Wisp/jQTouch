@@ -14,6 +14,9 @@
     height: $size;
     width: $size;
     -webkit-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
+    -moz-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
+    -o-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
+    transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
     vertical-align: top;
 }
 
@@ -26,6 +29,8 @@
     margin-top: -$size/2;
     border: $border-width solid $color;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 0;
     z-index: 10;
     line-height: $size - 11;
@@ -77,6 +82,7 @@
     position: relative;
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     display: inline-block;
     border-radius: $height / 2;
     background-color: #fff;
