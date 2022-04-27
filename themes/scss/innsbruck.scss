@@ -108,6 +108,7 @@ $toolbar-button-color: saturate(darken($base-color, 10), 10);
                     text-shadow: none;
                     box-shadow: none;
                     -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
                 }
             }
 
@@ -124,7 +125,7 @@ $toolbar-button-color: saturate(darken($base-color, 10), 10);
         }
 
         input[type='submit'] {
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+            background: linear-gradient(to bottom, rgba(238, 238, 238, 1), rgba(156, 158, 160, 1));
             border: 1px outset #aaa;
         }
 
