@@ -145,11 +145,14 @@ body {
                 @include border-radius(0 0 0 2px);
 
                 // New gradient syntax
-                -webkit-mask-image: -webkit-gradient(linear, left bottom, right top, from(rgba(0,0,0,1)), color-stop(50%, black), color-stop(50%, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
-                -webkit-mask-image: -webkit-linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,1) 15px, rgba(0,0,0,0) 15px);
+                //-webkit-mask-image: -webkit-gradient(linear, left bottom, right top, from(rgba(0,0,0,1)), color-stop(50%, black), color-stop(50%, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
+                -webkit-mask-image: linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,1) 15px, rgba(0,0,0,0) 15px);
+                mask-image: linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,1) 15px, rgba(0,0,0,0) 15px);
 
                 -webkit-mask-clip: border-box;
+                mask-clip: border-box;
                 -webkit-background-clip: content-box;
+                background-clip: content-box;
             }
 
             @if $include-highlights {
@@ -243,6 +246,7 @@ body {
         }
 
         -webkit-margin-collapse: separate;
+        margin-collapse: seperate;
 
         li {
             border-top: 1px solid darken($list-background-color, 5);
@@ -250,6 +254,7 @@ body {
             overflow: hidden;
             padding: 10px;
             -webkit-transform: translate3d(0,0,0); /* expensive way to avoid flickr */
+            transform: translate3d(0,0,0);
             position: relative;
             a {
                 text-decoration: none;
@@ -261,6 +266,7 @@ body {
                 margin: -10px;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 -webkit-transform: translateZ(0);
+                transform: translateZ(0);
                 @include color-by-background($list-background-color);
 
                 &.active, &.selected {
@@ -315,6 +321,15 @@ body {
                 ::-webkit-input-placeholder {
                     @include color-by-background($page-background-color, 25%);
                 }
+                ::-ms-input-placeholder {
+                    @include color-by-background($page-background-color, 25%);
+                }
+                ::-moz-input-placeholder {
+                    @include color-by-background($page-background-color, 25%);
+                }
+                ::placeholder {
+                    @include color-by-background($page-background-color, 25%);
+                }
 
                 input[type="text"],
                 input[type="password"],
@@ -333,6 +348,8 @@ body {
                     margin-left: 0px;
                     width: 100%;
                     -webkit-appearance: textarea;
+                    -moz-appearance: textarea;
+                    appearance: textarea;
                 }
                 textarea {
                     height: 120px;
@@ -358,7 +375,8 @@ body {
 
                 input[type='submit'] {
                     @include border-radius($default-border-radius/2);
-                    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+                    //background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+                    background: linear-gradient(to bottom, rgba(238,238,238,1), rgba(156,158,160,1));
                     border: 1px outset #aaa;
                     display: block;
                     font-size: inherit;
@@ -565,6 +583,8 @@ body {
             top: 0;
             left: -55px;
             -webkit-appearance: textarea;
+            -moz-appearance: textarea;
+            appearance: textarea;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
 
             &:checked {
