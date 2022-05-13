@@ -5,6 +5,7 @@
         <title>jQTouch &beta;</title>
         <style type="text/css" media="screen">@import "../../themes/css/jqtouch.css";</style>
         <script src="../../lib/zepto/zepto.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../lib/modernizr/modernizr-custom.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../src/jqt.js" type="text/javascript" charset="utf-8"></script>
 
         <script type="text/javascript" charset="utf-8">
@@ -31,22 +32,26 @@
         <style type="text/css" media="screen">
             #jqt .reveal.in {
             	-webkit-animation-name: dontmove;
+                animation-name: dontmove;
             	z-index: 0;
             }
 
             #jqt .reveal.out {
             	-webkit-animation-name: revealout;
+                animation-name: revealout;
             	z-index: 10;
             }
 
             #jqt .reveal.out.reverse {
             	z-index: 0;
             	-webkit-animation-name: dontmove;
+                animation-name: dontmove;
             }
 
             #jqt .reveal.in.reverse {
             	z-index: 10;
             	-webkit-animation-name: revealin;
+                animation-name: revealin;
             }
 
 
@@ -54,10 +59,18 @@
                 from { -webkit-transform: translateX(100%); }
                 to { -webkit-transform: translateX(0); }
             }
+            @keyframes revealin {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
 
             @-webkit-keyframes revealout {
                 from { -webkit-transform: translateX(0); }
                 to { -webkit-transform: translateX(100%); }
+            }
+            @keyframes revealout {
+                from { transform: translateX(0); }
+                to { transform: translateX(100%); }
             }
         </style>
     </head>
