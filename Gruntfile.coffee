@@ -366,6 +366,11 @@ module.exports = (grunt) ->
         tasks: ['extension']
         dot: false
 
+    update_submodules:
+      default:
+        options:
+          gitArgs: '--init'
+
     jshint:
       src: "<%= dirs.src %>/**/*.js"
       options:
@@ -463,7 +468,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'watch', ['build', 'watch_files']
 
   # Full (Clean and Build)
-  grunt.registerTask 'full', ['clean', 'update_submodules', 'build']
+  grunt.registerTask 'full', ['clean', 'update_submodules:default', 'build']
 
   # Default (Same as full)
   grunt.registerTask 'default', ['full']

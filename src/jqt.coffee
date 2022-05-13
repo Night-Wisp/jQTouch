@@ -402,8 +402,8 @@ class $.jQT
       support = $.support || {}
 
       $.extend support,
-        animationEvents: (typeof window.WebKitAnimationEvent isnt "undefined")
-        touch: (typeof window.TouchEvent isnt "undefined") and (window.navigator.userAgentData ? window.navigator.userAgentData.mobile : (window.navigator.userAgent.indexOf("Mobile") > -1)) and @settings.useFastTouch
+        animationEvents: ((typeof window.WebKitAnimationEvent isnt "undefined") or (typeof window.AnimationEvent isnt "undefined")) and (Modernizr.cssanimations)
+        touch: (typeof window.TouchEvent isnt "undefined") and (window.navigator.userAgentData.mobile ? (window.navigator.userAgent.indexOf("Mobile") > -1)) and @settings.useFastTouch and (Modernizr.touchevents)
         transform3d: ->
           head = $head.get(0)
           body = document.body
@@ -417,7 +417,7 @@ class $.jQT
           body.appendChild div
 
           # Check the result
-          result = div.offsetHeight is 3
+          result = (div.offsetHeight is 3) or (Modernizr.csstransforms3d)
 
           # Clean up
           style.parentNode.removeChild style
@@ -581,6 +581,7 @@ class $.jQT
       navigationEndHandler = (event) =>
         if support.animationEvents and animation and @settings.useAnimations
           fromPage.off "webkitAnimationEnd", navigationEndHandler
+          fromPage.off "animationend", navigationEndHandler
           fromPage.removeClass finalAnimationName + " out"
           toPage.removeClass finalAnimationName  if finalAnimationName
           $body.removeClass "animating animating3d"
@@ -649,6 +650,7 @@ class $.jQT
 
         # Bind internal 'cleanup' callback
         fromPage.on "webkitAnimationEnd", navigationEndHandler
+        fromPage.on "animationend", navigationEndHandler
         $body.addClass "animating#{is3d}"
 
         # Trigger animations

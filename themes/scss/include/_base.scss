@@ -37,8 +37,6 @@ body {
 
     &.notransform {
         -webkit-transform: none !important;
-        -moz-transform: none !important;
-        -o-transform: none !important;
         transform: none !important;
     }
 
@@ -77,7 +75,6 @@ body {
             position: relative;
             -webkit-box-flex: 1;
             -moz-box-flex: 1;
-            box-flex: 1;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -98,12 +95,6 @@ body {
         -webkit-animation-duration: 375ms;
         -webkit-animation-fill-mode: both;
         -webkit-animation-timing-function: ease-in-out;
-        -moz-animation-duration: 375ms;
-        -moz-animation-fill-mode: both;
-        -moz-animation-timing-function: ease-in-out;
-        -o-animation-duration: 375ms;
-        -o-animation-fill-mode: both;
-        -o-animation-timing-function: ease-in-out;
         animation-duration: 375ms;
         animation-fill-mode: both;
         animation-timing-function: ease-in-out;
@@ -131,12 +122,10 @@ body {
 
     &.supports3d {
         -webkit-perspective: 1000;
-        -moz-perspective: 1000;
         perspective: 1000;
 
         > * {
             -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
-            -moz-transform: translate3d(0,0,0) rotate(0) scale(1);
             transform: translate3d(0,0,0) rotate(0) scale(1);
         }
     }

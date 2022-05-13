@@ -14,8 +14,6 @@
     height: $size;
     width: $size;
     -webkit-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
-    -moz-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
-    -o-transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
     transform: scale($ratio, 1) rotate($direction * 90deg - 45deg) ;
     vertical-align: top;
 }
@@ -82,7 +80,6 @@
     position: relative;
     appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
     display: inline-block;
     border-radius: $height / 2;
     background-color: #fff;
