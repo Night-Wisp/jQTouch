@@ -29,14 +29,23 @@ Please look for the download (green button) with filename prefixed with `jqt-dem
 
 Once unzipped and untar, you can open `package/demons/index.html` with any WebkitBrowser on a desktop.
 
+
 The following browser versions should be supported:
+
 Chrome/Chromium V4+
+
 Edge V10+
+
 Firefox V16+
+
 Safari V4+
+
 Opera V15+
+
 Any WebkitBrowser
+
 Most HTML5+ and non-prefixed CSS Compliant Browsers
+
 
 ## Links
 
