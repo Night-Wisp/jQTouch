@@ -16,6 +16,7 @@ if $.jQT
         $el
           .css
             '-webkit-transition': 'top ' + settings.time + ' ease-in-out'
+            'transition': 'top ' + settings.time + ' ease-in-out'
             'display': 'block'
             'min-height': '0 !important'
           .data 'settings', settings
