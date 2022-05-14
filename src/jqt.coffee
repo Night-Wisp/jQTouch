@@ -403,7 +403,7 @@ class $.jQT
 
       $.extend support,
         animationEvents: ((typeof window.WebKitAnimationEvent isnt "undefined") or (typeof window.AnimationEvent isnt "undefined")) and (Modernizr.cssanimations)
-        touch: (typeof window.TouchEvent isnt "undefined") and (window.navigator.userAgentData.mobile ? (window.navigator.userAgent.indexOf("Mobile") > -1)) and @settings.useFastTouch and (Modernizr.touchevents)
+        touch: (typeof window.TouchEvent isnt "undefined") and (if (window.navigator.userAgentData? and window.navigator.userAgentData.mobile?) then (window.navigator.userAgentData.mobile) else (window.navigator.userAgent.indexOf("Mobile") > -1)) and @settings.useFastTouch and (Modernizr.touchevents)
         transform3d: ->
           head = $head.get(0)
           body = document.body
