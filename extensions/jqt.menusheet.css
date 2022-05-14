@@ -18,11 +18,17 @@
     -webkit-transition-duration: 250ms;
     -webkit-transition-fill-mode: both;
     -webkit-transition-timing-function: ease-in-out;
+    transition-property: translate3d, opacity, background-color;
+    transition-duration: 250ms;
+    transition-fill-mode: both;
+    transition-timing-function: ease-in-out;
 }
 
 #jqt.menuopened > .current {
     -webkit-transform: translate3d(260px, 0, 0) rotate(0) scale(1);
     -webkit-box-shadow: -3px 0px 3px rgba(63, 63, 63, 0.5);
+    transform: translate3d(260px, 0, 0) rotate(0) scale(1);
+    box-shadow: -3px 0px 3px rgba(63, 63, 63, 0.5);
     border-left: 0.5px solid rgba(127, 127, 127, 0.01);
     z-index: 20;
 }
@@ -40,6 +46,8 @@
 #jqt.menuopened > .menusheet.current {
     -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);  
     -webkit-box-shadow: none;
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);  
+    box-shadow: none;
     border-left: none;
     z-index: 0;
 }
@@ -62,6 +70,7 @@
     border-top: 1px solid #333;
     background-color: rgba(0, 0, 0, 0.25);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(160, 168, 172, 0.75)), color-stop(0.08, rgba(112, 120, 128, 0.5)), color-stop(0.08, rgba(96, 102, 114, 0.5)), to(rgba(96, 102, 114, 0.5)));
+    background: linear-gradient(to bottom, rgba(160, 168, 172, 0.75) 0%, rgba(112, 120, 128, 0.5) 8%, rgba(96, 102, 114, 0.5) 8%, rgba(96, 102, 114, 0.5) 100%)
 }
 
 /* @end */
